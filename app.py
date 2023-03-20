@@ -327,6 +327,7 @@ def export_pdf():
         response.headers.set('Content-Type', 'application/pdf')
         response.headers.set('Content-Disposition', 'attachment', filename='quiz.pdf')
         return response
+    return render_template('export.html')
 
 # Define a route for exporting a quiz as a Google Form
 @app.route("/quiz/<int:quiz_id>/export/form")
@@ -361,6 +362,4 @@ def export_quiz_form(quiz_id):
         form_url += f"&entry.{entry['field_id']}={entry['field_value']}"
     # Redirect to the Google Form URL
     return redirect(form_url)
-
-
-
+    return render_template('export.html')
