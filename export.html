@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Export Quiz - Quiz App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Quiz App</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Create Quiz</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My Quizzes</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="container mt-5">
+      <h1>Export Quiz</h1>
+      <p>You can export this quiz as a Google Form or a PDF document.</p>
+      <div class="card mb-3">
+        <div class="card-header">
+          Export as Google Form
+        </div>
+        <div class="card-body">
+          <form action="#">
+            <div class="form-group">
+              <label for="form-name">Form Name</label>
+              <input type="text" class="form-control" id="form-name" placeholder="Enter a name for the Google Form">
+            </div>
+            <div class="form-group">
+              <label for="form-description">Form Description</label>
+              <textarea class="form-control" id="form-description" rows="3" placeholder="Enter a description for the Google Form"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Export as Google Form</button>
+          </form>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-header">
+          Export as PDF
+        </div>
+        <div class="card-body">
+          <form action="#">
+            <div class="form-group">
+              <label for="pdf-name">PDF Name</label>
+              <input type="text" class="form-control" id="pdf-name" placeholder="Enter a name for the PDF document">
+            </div>
+            <div class="form-group">
+              <label for="pdf-description">PDF Description</label>
+              <textarea class="form-control" id="pdf-description" rows="3" placeholder="Enter a description for the PDF document"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Export as PDF</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12

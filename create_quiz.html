@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Quiz</title>
+  <!-- Link Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZEZzI79+5P5Bk9XQ9XbNIU"
+    crossorigin="anonymous">
+  <!-- Link Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Create Quiz</h1>
+    <form>
+      <div class="form-group">
+        <label for="quiz-name">Quiz Name:</label>
+        <input type="text" class="form-control" id="quiz-name" placeholder="Enter quiz name">
+      </div>
+      <div class="form-group">
+        <label for="question1">Question 1:</label>
+        <input type="text" class="form-control" id="question1" placeholder="Enter question">
+        <div class="form-group">
+          <label for="option1">Option 1:</label>
+          <input type="text" class="form-control" id="option1" placeholder="Enter option 1">
+        </div>
+        <div class="form-group">
+          <label for="option2">Option 2:</label>
+          <input type="text" class="form-control" id="option2" placeholder="Enter option 2">
+        </div>
+        <div class="form-group">
+          <label for="option3">Option 3:</label>
+          <input type="text" class="form-control" id="option3" placeholder="Enter option 3">
+        </div>
+        <div class="form-group">
+          <label for="option4">Option 4:</label>
+          <input type="text" class="form-control" id="option4" placeholder="Enter option 4">
+        </div>
+        <div class="form-group">
+          <label for="answer1">Answer:</label>
+          <select class="form-control" id="answer1">
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+            <option>Option 4</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Create Quiz</button>
+    </form>
+ 
