@@ -4,16 +4,16 @@ from flask_login import LoginManager, login_user, logout_user, login_required, U
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_wtf import FlaskForm
 from flask_socketio import SocketIO, emit, join_room, leave_room
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import os
 import random
-import pandas as pd
-import pdfkit
-from google.oauth2.credentials import Credentials
-from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
+#import pandas as pd
+#import pdfkit
+#from google.oauth2.credentials import Credentials
+#from googleapiclient.discovery import build
+#from googleapiclient.errors import HttpError
 from datetime import datetime
-from flask_report import Report
+#from flask_report import Report
 
 
 app = Flask(__name__)
@@ -23,8 +23,10 @@ db = SQLAlchemy(app)
 #models
 
 class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(50), unique=True, nullable=False)
+    name = db.Column(db.String(50), nullable=False)
+    email = db.Column(db.String(50), nullable=False)
+    phone_no = db.Column(db.String(50), nullable=False)
+    username = db.Column(db.String(50), primary_key=True, nullable=False)
     password = db.Column(db.String(50), nullable=False)
     quizzes = db.relationship('Quiz', backref='author', lazy=True)
 
@@ -85,17 +87,20 @@ def logout():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        phone_no = request.form['phone number']
         username = request.form['username']
         password = request.form['password']
-        user = User(username=username, password=password)
+        user = User(name=name,email=email,phone_no=phone_no,username=username,password=password)
         db.session.add(user)
         db.session.commit()
         flash('Your account has been created', 'success')
         return redirect('/login')
-    return render_template('register.html')
+    return render_template('signup.html')
 
 #quiz management 
-
+"""
 @app.route("/create_quiz", methods=["GET", "POST"])
 def create_quiz():
     if request.method == "POST":
@@ -363,3 +368,7 @@ def export_quiz_form(quiz_id):
     # Redirect to the Google Form URL
     return redirect(form_url)
     return render_template('export.html')
+"""
+
+if __name__=='__main__':
+    app.run()
